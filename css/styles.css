@@ -56,9 +56,8 @@ main {
 /* Estilos para os cartões Pokémon */
 .pokemon-card {
     width: auto;
-    height: 300px;
+    height: 200px;
     margin: 20px;
-    background-color: #68A090;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     text-align: center;
@@ -67,7 +66,7 @@ main {
 
 .pokemon-card section {
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr;
     gap: 0px 0px;
     grid-template-areas:
@@ -78,10 +77,52 @@ main {
     padding-right: 45%;
 }
 
-.pokemon-card img {
-    width: calc(100% - 40px); /* 100% menos 20px de margem à esquerda e 20px de margem à direita */
-    height: auto; /* A altura se ajustará automaticamente */
+.caracteristicas ol {
+    padding: 0;
+    list-style: none;
 }
+
+.caracteristicas li {
+    color: black;
+    padding: 0.25rem 0.5rem;
+    margin-bottom: 15px;
+    margin-right: 25px;
+    font-size: 0.8rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.tipo {
+    height: auto;
+    width: 40px;
+    background: #00d181 ;
+    display: inline-block;
+}
+
+.poder {
+    width: 100px;
+    background: #8f1cd1bd;
+}
+
+.caracteristicas img {
+    width: 151px;
+    height: 138px;
+    margin: 10px;
+}
+
+
+.caracteristicas button {
+    width: auto;
+    height: 30px;
+    padding-bottom: 10px;
+    border-radius: 12px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+
 
 /* Estilos para a barra de pesquisa */
 #searchInput {
@@ -141,5 +182,31 @@ main {
     /* Renderizar apenas um card e centralizá-lo */
     .pokemon-card {
         width: 100%;
+    }
+}
+
+/* Estilos para dispositivos menores que 400x768px */
+@media screen and (max-width: 400px) {
+
+    /* Reduza a largura do contêiner principal e dos cartões proporcionalmente */
+    .container {
+        padding: 10px;
+    }
+
+    .pokemon-card {
+        width: 70%;
+    }
+
+    /* Ajuste o tamanho das imagens dos cartões */
+    .caracteristicas img {
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    /* Ajuste o tamanho da barra de pesquisa */
+    #searchInput {
+        width: 50%;
     }
 }

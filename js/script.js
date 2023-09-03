@@ -31,12 +31,22 @@ document.addEventListener("DOMContentLoaded", function () {
     // Retorna 'normal' como tipo padrão se não houver informações de tipo
     return "normal";
   }
+  // Função para obter a descrição do poder do Pokémon
+  function obterPoderPokemon(pokemon) {
+    if (pokemon.abilities && pokemon.abilities.length > 0) {
+      // Verifica se o Pokémon tem habilidades
+      const primeiraHabilidade = pokemon.abilities[0].ability;
+      return primeiraHabilidade.name; // Retorna o nome da primeira habilidade como descrição de poder
+    }
+    return "Unknown"; // Retorna "Unknown" se não houver informações de poder
+  }
 
   // Função para criar um card de Pokémon
   function criarCardPokemon(pokemon) {
     const card = document.createElement("div");
     card.classList.add("pokemon-card");
     const tipoPrimario = obterTipoPrimario(pokemon);
+    const poderPokemon = obterPoderPokemon(pokemon);
 
     // Define a cor de fundo do card com base no tipo do Pokémon
     card.style.backgroundColor = definirCorPorTipo(tipoPrimario);
@@ -50,7 +60,14 @@ document.addEventListener("DOMContentLoaded", function () {
     <h2>${nomePokemon} </h2>
     <h3>#${numeroPokemon}</h3> 
     </section>
-    <img src="${pokemon.sprites.front_default}" alt="${nomePokemon}">
+    <section class="caracteristicas">
+      <ol>
+      <li class="tipo" >${tipoPrimario}</li>
+      <li class="poder">${poderPokemon}</li>
+      </ol>
+    <img src="${pokemon.sprites.other.dream_world.front_default}" alt="${nomePokemon}">
+  </section>
+
   `;
 
     return card; // Retorna o elemento HTML do card de Pokémon
@@ -59,24 +76,24 @@ document.addEventListener("DOMContentLoaded", function () {
   // Função para definir cores com base no tipo do Pokémon em inglês
   function definirCorPorTipo(tipo) {
     const coresPorTipo = {
-      "bug":"#76A866",
-      "dark":"#70657B",
-      "dragon":"#004170",
-      "electric":"#E7BF0D",
-      "fairy":"#EA85E4",
-      "fighting":"#D96D8C",
-      "fire":"#EAAB7D",
-      "flying":"#6892B0",
-      "ghost":"#7587BD",
-      "grass":"#729F92",
-      "ground":"#E7A888",
-      "ice":"#59C5B4",
-      "normal":"#BF9762",
-      "poison":"#B978BA",
-      "psychic":"#F88C90",
-      "rock":"#C7B78B",
-      "steel":"#ADADAD",
-      "water":"#71C3FF",
+      bug: "#76A866",
+      dark: "#70657B",
+      dragon: "#004170",
+      electric: "#E7BF0D",
+      fairy: "#EA85E4",
+      fighting: "#D96D8C",
+      fire: "#EAAB7D",
+      flying: "#6892B0",
+      ghost: "#7587BD",
+      grass: "#729F92",
+      ground: "#E7A888",
+      ice: "#59C5B4",
+      normal: "#BF9762",
+      poison: "#B978BA",
+      psychic: "#F88C90",
+      rock: "#C7B78B",
+      steel: "#ADADAD",
+      water: "#71C3FF",
     };
 
     // Retorna a cor correspondente ao tipo do Pokémon, ou '#68A090' se o tipo não for encontrado
