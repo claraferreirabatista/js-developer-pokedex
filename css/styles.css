@@ -39,11 +39,6 @@ input[type="text"] {
     border-radius: 4px;
 }
 
-/* Estilos para o elemento principal da página */
-main {
-    display: flex;
-    justify-content: center;
-}
 
 /* Estilos para a lista de cartões Pokémon */
 .pokedex {
