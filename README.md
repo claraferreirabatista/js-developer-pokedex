@@ -2,6 +2,10 @@
 
 Este é um projeto educacional desenvolvido pela Escola de Programação Digital Innovation One (DIO) para explorar os fundamentos do desenvolvimento web e demonstrar a importância do Git/GitHub como ferramenta de colaboração e versionamento de código.
 
+## Acesse em sua máquina o Deploy
+
+Link: [pokedex](https://js-developer-pokedex-three.vercel.app/)
+
 ## Como Participar
 
 1. Fork e clone o repositório do DIO: [js-developer-pokedex]( https://github.com/digitalinnovationone/js-developer-pokedex)
